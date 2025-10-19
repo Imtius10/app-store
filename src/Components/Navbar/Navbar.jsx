@@ -34,7 +34,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <Link to='/'><li><a onClick={()=>setActive("home")} className={active==="home"?"text-1xl font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline underline-offset-4 decoration-[#632EE3]":''}>Home</a></li></Link>
                     <Link to='/appdata'><li><a onClick={()=>setActive("app")} className={active==="app"?"text-1xl font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline underline-offset-4 decoration-[#632EE3]":''}>App</a></li></Link>
-                    <li><a onClick={()=>setActive("intsallation")} className={active==="intsallation"?"text-1xl font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline underline-offset-4 decoration-[#632EE3]":''}>Installattion</a></li>
+                    <Link to='/installapp'><li><a onClick={() => setActive("intsallation")} className={active === "intsallation" ? "text-1xl font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent underline underline-offset-4 decoration-[#632EE3]" : ''}>Installattion</a></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
