@@ -4,6 +4,7 @@ import Home from '../Home/Home';
 import Root from '../Components/Root/Root';
 import AppStore from '../Pages/AppStore/AppStore';
 import AppData from '../Pages/AppData/AppData';
+import AppDetails from '../Pages/AppDetails/AppDetails';
 
 const router=createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router=createBrowserRouter([
                 path:'/appdata',
                 loader:()=>fetch('/AppInfo.json'),
                 Component:AppData
+            },
+            {
+                path: '/appdetails/:id',
+                loader:()=>fetch('/AppInfo.json'),
+                Component:AppDetails
             }
         ]
     }
