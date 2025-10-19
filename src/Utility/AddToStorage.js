@@ -22,4 +22,12 @@ const addToStore = (id)=> {
         console.log(storeAppData)
     }
 }
-export { addToStore, getStoreApp }
+
+const removeFromStore = (id) => {
+    const storedApp = JSON.parse(localStorage.getItem("installapp") || "[]");
+    const updated = storedApp.filter(appId => parseInt(appId) !== id); 
+    localStorage.setItem("installapp", JSON.stringify(updated));
+};
+
+
+export { addToStore, getStoreApp, removeFromStore };
