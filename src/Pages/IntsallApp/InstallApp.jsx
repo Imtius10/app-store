@@ -15,7 +15,6 @@ const InstallApp = () => {
         setInstallapp(mypp);
     }, [data]);
 
-    
     const handleSort = (type) => {
         setSortType(type);
         let sortedApps = [...installedapp];
@@ -30,16 +29,18 @@ const InstallApp = () => {
     };
 
     return (
-        <div className="p-4">
-            <h1 className="text-3xl font-bold mt-7">Your Installed Apps</h1>
-            <p className="text-gray-500 mb-3">
-                Explore All Trending Apps on the Market developed by us
-            </p>
-            <div className="flex items-center justify-between mb-4">
-                <h4 className="text-xl">{installedapp.length} App Found</h4>
+        <div className="p-4 flex flex-col items-center text-center">
+            <div className="max-w-3xl mx-auto mb-6">
+                <h1 className="text-3xl font-bold mt-7">Your Installed Apps</h1>
+                <p className="text-gray-500 mt-2">
+                    Explore all trending apps on the market developed by us
+                </p>
+            </div>
 
-                
-                <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl mb-6 px-4">
+                <h4 className="text-lg font-medium">{installedapp.length} App Found</h4>
+
+                <div className="flex items-center gap-2 mt-3 sm:mt-0">
                     <label htmlFor="sort" className="text-gray-700 text-sm font-medium">
                         Sort by:
                     </label>
@@ -56,14 +57,17 @@ const InstallApp = () => {
                 </div>
             </div>
 
-           
-            {installedapp.map((app) => (
-                <ShowInstall
-                    key={app.id}
-                    installapp={app}
-                    onUninstall={(id) => setInstallapp(prev => prev.filter(app => app.id !== id))}
-                />
-            ))}
+            <div className="w-full max-w-4xl space-y-4">
+                {installedapp.map((app) => (
+                    <ShowInstall
+                        key={app.id}
+                        installapp={app}
+                        onUninstall={(id) =>
+                            setInstallapp((prev) => prev.filter((app) => app.id !== id))
+                        }
+                    />
+                ))}
+            </div>
         </div>
     );
 };

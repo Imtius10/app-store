@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AppStore from '../AppStore/AppStore';
 import { Link, useLoaderData } from 'react-router';
+import AppNotFound from '../../Components/AppNotFound/AppNotFound';
 
 const AppData = () => {
     const data = useLoaderData();
@@ -32,15 +33,17 @@ const AppData = () => {
                     </div>
                 </div>
 
-
-          
-                <div className='grid grid-cols-1 justify-center md:grid-cols-4 gap-4'>
+            {
+                filteredData.length === 0 ? (<AppNotFound></AppNotFound>): (<div className = 'grid grid-cols-1 justify-center md:grid-cols-4 gap-4'>
                     {
                         filteredData.map(singleData => (
-                            <AppStore key={singleData.id} singleData={singleData} />
-                        ))
+            <AppStore key={singleData.id} singleData={singleData} />
+            ))
                     }
-                </div>
+        </div>)
+            }
+          
+                
             
             </div>
        

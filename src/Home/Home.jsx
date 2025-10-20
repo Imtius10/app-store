@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router';
 import FontData from '../Components/Fontdata/FontData';
 import AppStore from '../Pages/AppStore/AppStore';
 import AppData from '../Pages/AppData/AppData';
+import ShowInstall from '../Pages/ShowInstallapp/ShowInstall';
+import InstallApp from '../Pages/IntsallApp/InstallApp';
 
 
 const Home = () => {
@@ -14,6 +16,7 @@ const Home = () => {
             <Hero></Hero>
             <FontData dt={data}></FontData>
            
+            
         </div>
     );
 };

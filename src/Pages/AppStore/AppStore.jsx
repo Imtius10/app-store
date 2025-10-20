@@ -4,13 +4,13 @@ import download from '../../assets/icon-downloads.png'
 import { Link } from 'react-router';
 
 const AppStore = ({ singleData }) => {
-  const { ratingAvg, image, description, downloads,id } = singleData
+  const { ratingAvg, image, description, downloads,id,title } = singleData
   return (
 
     <Link to={`/appdetails/${id}`}>
       <div className='card w-[348px] h-[435px]'>
         <img src={image} alt="" />
-        <p>{description}</p>
+        <p>{title}</p>
         <div className="flex justify-between">
           <span className="flex items-center gap-2 bg-[#F1F5E8] text-[#00D390] p-1 rounded-sm">
             {downloads}

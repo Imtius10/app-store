@@ -14,11 +14,17 @@ import {
   YAxis,
 } from "recharts";
 import { addToStore, getStoreApp } from "../../Utility/AddToStorage";
+import AppNotFound from "../../Components/AppNotFound/AppNotFound";
 
 const AppDetails = () => {
-  const { id } = useParams();
-  const appId = parseInt(id);
   const data = useLoaderData();
+  const { id } = useParams();
+  
+  
+  const appId = /^\d+$/.test(id) ? parseInt(id, 10) : NaN;
+
+  console.log(id)
+  console.log(typeof id)
   const singleApp = data.find((app) => app.id === appId);
 
   const [isInstalled, setIsInstalled] = useState(false);
@@ -30,7 +36,7 @@ const AppDetails = () => {
     }
   }, [appId]);
 
-  if (!singleApp) return <p className="text-center mt-10">App not found</p>;
+  if (!singleApp) return <AppNotFound></AppNotFound>;
 
   const { ratingAvg, title, downloads, reviews, image, size, ratings, description } = singleApp;
 
@@ -39,7 +45,14 @@ const AppDetails = () => {
       addToStore(id);
       setIsInstalled(true);
       toast.success("App Installed Successfully!", {
-        toastId: "install-toast", 
+        toastId: "install-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
     }
   };

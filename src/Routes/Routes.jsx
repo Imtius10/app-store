@@ -6,11 +6,16 @@ import AppStore from '../Pages/AppStore/AppStore';
 import AppData from '../Pages/AppData/AppData';
 import AppDetails from '../Pages/AppDetails/AppDetails';
 import InstallApp from '../Pages/IntsallApp/InstallApp';
+import GlobalError from '../Pages/Errors/GlobalError';
 
 const router=createBrowserRouter([
     {
         path:'/',
-        Component:Root,
+        Component: Root,
+        errorElement: <GlobalError></GlobalError>,
+           
+            
+    
         children:[
             {
                index:true,
