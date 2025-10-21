@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { VscGithub } from "react-icons/vsc";
 import logo from '../../assets/logo.png';
 import err from '../../assets/error-404.png';
+import { RxTwitterLogo, RxInstagramLogo, RxGithubLogo } from "react-icons/rx";
+
 
 const GlobalError = () => {
     const [active, setActive] = useState("home");
@@ -77,33 +79,53 @@ const GlobalError = () => {
                 </Link>
             </div>
 
-            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
-                <aside>
-                    <svg width="50" height="50" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"
-                        className="fill-current">
-                        <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456..."></path>
-                    </svg>
-                    <p>
-                        ACME Industries Ltd.<br />
-                        Providing reliable tech since 1992
-                    </p>
-                </aside>
-                <nav>
-                    <h6 className="footer-title">Social</h6>
-                    <div className="grid grid-flow-col gap-4">
-                        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" className="fill-current"><path
-                                d="M24 4.557c-.883.392-1.832.656-2.828..."></path></svg></a>
-                        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" className="fill-current"><path
-                                d="M19.615 3.184c-3.604-.246-11.631-.245..."></path></svg></a>
-                        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" className="fill-current"><path
-                                d="M9 8h-3v4h3v12h5v-12..."></path></svg></a>
-                    </div>
-                </nav>
-            </footer>
+           <footer className="bg-neutral text-neutral-content p-6 sm:p-10">
+                 <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+                   <div className="flex items-center gap-3">
+                     <div className="text-3xl font-bold"><img src={logo} alt="" className="w-10 h-10" /></div>
+                     <p className="text-sm">
+                       <span className="font-bold text-lg">AppStore</span>
+                       <br />
+                       All your favorite apps in one place
+                     </p>
+                   </div>
+           
+                   <div className="flex items-center gap-4">
+                     <h5 className="font-semibold">Follow us:</h5>
+                     <a
+                       href="https://twitter.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="text-2xl hover:text-white transition-colors"
+                       aria-label="Twitter"
+                     >
+                       <RxTwitterLogo />
+                     </a>
+                     <a
+                       href="https://instagram.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="text-2xl hover:text-white transition-colors"
+                       aria-label="Instagram"
+                     >
+                       <RxInstagramLogo />
+                     </a>
+                     <a
+                       href="https://github.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="text-2xl hover:text-white transition-colors"
+                       aria-label="GitHub"
+                     >
+                       <RxGithubLogo />
+                     </a>
+                   </div>
+                 </div>
+           
+                 <div className="text-center mt-6 text-xs opacity-70">
+                   © {new Date().getFullYear()} AppStore — All rights reserved.
+                 </div>
+               </footer>
         </div>
     );
 };

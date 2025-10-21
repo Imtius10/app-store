@@ -15,11 +15,10 @@ const Navbar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li>
-                            <a>App</a>
-                        </li>
-                        <li><a>Installation</a></li>
+                        <Link to='/'><li><a>Home</a></li></Link>  
+                        <Link to='/appdata'><li><a>App</a></li></Link>  
+                        <Link to='/installapp'><li><a>Installattion</a></li></Link>  
+                        
                     </ul>
                 </div>
                <Link to='/'><div className='flex gap-2'>

@@ -9,7 +9,9 @@ const AppStore = ({ singleData }) => {
 
     <Link to={`/appdetails/${id}`}>
       <div className='card w-[348px] h-[435px]'>
-        <img src={image} alt="" />
+        <div className='p-2 flex justify-center items-center bg-gray-100'>
+          <img className='w-50 h-50 object-cover  rounded-xl' src={image} alt={title} />
+        </div>
         <p>{title}</p>
         <div className="flex justify-between">
           <span className="flex items-center gap-2 bg-[#F1F5E8] text-[#00D390] p-1 rounded-sm">
